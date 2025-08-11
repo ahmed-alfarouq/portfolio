@@ -55,8 +55,8 @@ const About = () => {
             />
           </div>
 
-          <div className="flex gap-5">
-            <div className="card w-1/2 lg:w-full">
+          <div className="flex flex-col sm:flex-row gap-5">
+            <div className="card sm:w-1/2 lg:w-full">
               <h3 className="card-title">Quick Facts</h3>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
@@ -76,7 +76,7 @@ const About = () => {
             <img
               src="me.png"
               alt=""
-              className="rounded-2xl w-1/2 object-cover shadow-2xl lg:hidden"
+              className="rounded-2xl sm:w-1/2 object-cover shadow-2xl lg:hidden"
             />
           </div>
         </section>
