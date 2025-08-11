@@ -10,7 +10,7 @@ const HomePage = () => {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </section>
 
-      <section className="text-center z-10 px-8">
+      <section className="text-center z-10 p-8 md:py-0">
         <div className="mb-8">
           <img
             src="profile.png"
