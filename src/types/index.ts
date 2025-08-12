@@ -60,3 +60,16 @@ export interface TechnicalCardProps {
   title: string;
   description: string;
 }
+
+export interface ProjectCardProps {
+  title: string;
+  description: string;
+  technologies: string[];
+  stats: { stars: number; forks: number; views: number };
+  liveUrl: string;
+  githubUrl?: string;
+}
+
+export interface FeaturedProjectCardProps extends ProjectCardProps {
+  img: string;
+}
