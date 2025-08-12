@@ -233,3 +233,74 @@ export const technicalHighlights = [
     description: "Semantic HTML & accessibility",
   },
 ];
+
+export const projects = [
+  {
+    id: 1,
+    title: "E-Commerce Platform",
+    description:
+      "Shoee is a fully responsive Ecommerce platform specializing in men's clothing, watches, and shoes. It offers a seamless and secure shopping experience.",
+    image: "/projects/shoee.png",
+    technologies: [
+      "React.js",
+      "Redux",
+      "Formik",
+      "SCSS",
+      "Express",
+      "MongoDb",
+      "JWT",
+    ],
+    liveUrl: "https://shoee-rho.vercel.app/",
+    githubUrl: "https://github.com/ahmed-alfarouq/Shoee",
+    featured: true,
+    stats: { stars: 0, forks: 0, views: 0 },
+  },
+  {
+    id: 2,
+    title: "Income/Expense & Loans Tracker",
+    description:
+      "Finvestor is a modern expense/income tracking and Loans app built to help users manage their money, track loans, and grow wealth—intuitively and securely.",
+    image: "/projects/finvestor.jpg",
+    technologies: ["Next.js", "TS", "Plaid API", "Dwolla", "Tailwind"],
+    liveUrl: "https://finvestor.vercel.app/",
+    githubUrl: "https://github.com/ahmed-alfarouq/finvestor",
+    featured: true,
+    stats: { stars: 0, forks: 0, views: 0 },
+  },
+  {
+    id: 3,
+    title: "Fully Custom Video Player",
+    description:
+      "Custom React Video Player A fully custom video player built from scratch using React and the HTML5 Video API — with no third-party dependencies or branding. Designed for full accessibility, responsiveness, and mobile-first behavior.",
+    image: "/projects/video-player.png",
+    technologies: ["React", "TS", "HTML 5 Video API", "Tailwind CSS"],
+    liveUrl: "https://af-video-player.vercel.app/",
+    githubUrl: "https://github.com/ahmed-alfarouq/video-player",
+    featured: true,
+    stats: { stars: 0, forks: 0, views: 0 },
+  },
+  {
+    id: 4,
+    title: "Sonar",
+    description:
+      "A fully responsive, production-ready mental health platform designed to empower students, parents, and schools. The website reflects modern UI/UX principles with fast load times, smooth component-based architecture, and clear accessibility in mind.",
+    image: "/projects/sonar.png",
+    technologies: ["React.js", "TS", "Tailwind CSS"],
+    liveUrl: "https://sonar-neon.vercel.app/",
+    githubUrl: "",
+    featured: false,
+    stats: { stars: 0, forks: 0, views: 0 },
+  },
+  {
+    id: 5,
+    title: "React Particles",
+    description:
+      "Built a dynamic particle animation web app using Proton.js for real-time particle effects and Leva for an interactive UI control panel. The app allows users to customize blob shapes, behaviors, and configurations in real time, with persistent storage via localStorage.",
+    image: "/projects/sonar.png",
+    technologies: ["React.js", "Proton.js", "Leva"],
+    liveUrl: "https://particles-game-lilac.vercel.app/",
+    githubUrl: "",
+    featured: false,
+    stats: { stars: 0, forks: 0, views: 0 },
+  },
+];

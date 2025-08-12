@@ -26,10 +26,14 @@
   }
 
   .card {
-    @apply bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700;
+    @apply bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 hover:border-purple-400/50 transition-all duration-300;
   }
 
   .card-title {
     @apply text-2xl font-semibold text-white mb-4;
+  }
+
+  .tag {
+    @apply text-xs text-blue-300 bg-blue-500/20 px-2 py-1 rounded;
   }
 }
