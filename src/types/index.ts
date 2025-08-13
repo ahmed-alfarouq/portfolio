@@ -1,4 +1,12 @@
 import { type LucideIcon } from "lucide-react";
+import type { Control, FieldValues, Path } from "react-hook-form";
+
+export interface SendMail {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
 
 export interface Skill {
   name: string;
@@ -72,4 +80,24 @@ export interface ProjectCardProps {
 
 export interface FeaturedProjectCardProps extends ProjectCardProps {
   img: string;
+}
+
+interface BaseInputProps {
+  label: string;
+  placeholder: string;
+  error?: string;
+  required?: boolean;
+  disabled?: boolean;
+}
+export interface FormInputProps<T extends FieldValues> extends BaseInputProps {
+  name: Path<T>;
+  control: Control<T>;
+  type?: HTMLInputElement["type"];
+}
+
+export interface FormTextareaProps<T extends FieldValues>
+  extends BaseInputProps {
+  name: Path<T>;
+  control: Control<T>;
+  rows: number;
 }
