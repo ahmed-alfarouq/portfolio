@@ -1,6 +1,6 @@
 import type { SendMail } from "@/types";
 
-const API = (import.meta.env.VITE_API_URL || process.env.API_URL) as string;
+const API = import.meta.env.VITE_API_URL as string;
 
 const sendMail = async ({ name, email, subject, message }: SendMail) => {
   const response = await fetch(`${API}/api/send-email`, {
