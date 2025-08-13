@@ -13,7 +13,7 @@ const sendMail = async ({ name, email, subject, message }: SendMail) => {
   });
 
   if (!response.ok) {
-    throw new Error(`Response status: ${response.status}`);
+    throw new Error("Something went wrong. Please try again later.");
   }
 
   const result = await response.json();
