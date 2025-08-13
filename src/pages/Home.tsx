@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 
+
 import { Mail, Github, Linkedin, Download, ChevronRight } from "lucide-react";
 
 const HomePage = () => {

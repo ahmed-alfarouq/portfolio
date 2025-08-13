@@ -8,7 +8,7 @@
   .inner-container {
     @apply max-w-6xl mx-auto p-8 lg:px-0;
   }
-  
+
   .page-container {
     @apply min-h-dvh sm:pl-[70px] w-full flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden;
   }
@@ -35,5 +35,29 @@
 
   .tag {
     @apply text-xs text-blue-300 bg-blue-500/20 px-2 py-1 rounded;
+  }
+
+  .form-control {
+    @apply space-y-3;
+  }
+
+  .label {
+    @apply block text-white text-sm font-medium mb-2;
+  }
+
+  .input {
+    @apply w-full bg-gray-800/50 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors;
+  }
+
+  .required-indicator {
+    @apply ml-1 text-[#FFC72C];
+  }
+
+  .form-error {
+    @apply inline-block text-sm p-2 rounded bg-[#FFC72C1A] text-[#FFC72C] border-l-2 border-l-[#FFC72C];
+  }
+
+  .form-success {
+    @apply inline-block text-sm p-2 rounded bg-[#ffc525] text-[#ffffff] border-l-2 border-l-[#FFC72C];
   }
 }
