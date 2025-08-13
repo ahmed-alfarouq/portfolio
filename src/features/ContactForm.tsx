@@ -31,6 +31,8 @@ const ContactForm = () => {
   });
 
   const onSubmit: SubmitHandler<ContactSchema> = (data) => {
+    setErrorMessage("");
+    setSuccessMessage("");
     startTransition(async () => {
       try {
         const result = await sendMail({ ...data });
@@ -84,7 +86,11 @@ const ContactForm = () => {
       )}
 
       {successMessage && (
-        <span className="form-success w-full" role="alert" aria-live="assertive">
+        <span
+          className="form-success w-full"
+          role="alert"
+          aria-live="assertive"
+        >
           {successMessage}
         </span>
       )}
