@@ -12,11 +12,12 @@ const sendMail = async ({ name, email, subject, message }: SendMail) => {
       },
       body: JSON.stringify({ name, email, subject, message }),
     });
-
+    console.log("res:", response);
     const result = await response.json();
 
     return result;
   } catch (error) {
+    console.log(error);
     throw Error((error as Error).message);
   }
 };
