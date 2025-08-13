@@ -13,10 +13,17 @@ const sendMail = async ({ name, email, subject, message }: SendMail) => {
       body: JSON.stringify({ name, email, subject, message }),
     });
 
+    if (!response.ok) {
+      if (response.status === 405) {
+        return { error: "Method is not allowed." };
+      }
+      return { error: "Something went wrong!" };
+    }
     const result = await response.json();
 
     return result;
   } catch (error) {
+    console.log(error);
     throw Error((error as Error).message);
   }
 };

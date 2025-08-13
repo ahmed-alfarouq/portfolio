@@ -36,6 +36,10 @@ const ContactForm = () => {
     startTransition(async () => {
       try {
         const result = await sendMail({ ...data });
+        if ("error" in result) {
+          setErrorMessage(result.error);
+          return;
+        }
         setSuccessMessage(result.message);
       } catch (error) {
         setErrorMessage((error as Error).message);
