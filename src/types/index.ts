@@ -36,6 +36,13 @@ export interface CategoryConfig {
 export type CategoryConfigMap = Record<SkillCategory, CategoryConfig>;
 
 // Components
+export interface LazyImageProps {
+  placeholderImg?: string;
+  src: string;
+  alt: string;
+  className?: string;
+}
+
 export interface SkillsCategoryProps {
   config: CategoryConfig;
   icon: LucideIcon;

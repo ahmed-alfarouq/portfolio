@@ -1,6 +1,7 @@
 import { ExternalLink, Eye, GitBranch, Github, Star } from "lucide-react";
 
 import type { FeaturedProjectCardProps } from "@/types";
+import LazyImage from "./LazyImage";
 
 const FeaturedProjectCard = ({
   img,
@@ -14,7 +15,8 @@ const FeaturedProjectCard = ({
   return (
     <section className="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20 hover:border-purple-400/50 transition-all duration-300 group">
       <figure className="relative overflow-hidden">
-        <img
+        <LazyImage
+          placeholderImg="/images/default-placeholder.jpg"
           src={img}
           alt={title}
           className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
