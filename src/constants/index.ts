@@ -296,11 +296,11 @@ export const projects = [
     title: "React Particles",
     description:
       "Built a dynamic particle animation web app using Proton.js for real-time particle effects and Leva for an interactive UI control panel. The app allows users to customize blob shapes, behaviors, and configurations in real time, with persistent storage via localStorage.",
-    image: "/images/projects/sonar.webp",
+    image: "/images/projects/particles.webp",
     technologies: ["React.js", "Proton.js", "Leva"],
     liveUrl: "https://particles-game-lilac.vercel.app/",
     githubUrl: "",
-    featured: false,
+    featured: true,
     stats: { stars: 0, forks: 0, views: 0 },
   },
 ];
