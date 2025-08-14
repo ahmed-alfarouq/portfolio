@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 
-
 import { Mail, Github, Linkedin, Download, ChevronRight } from "lucide-react";
+import LazyImage from "@/components/LazyImage";
 
 const HomePage = () => {
   return (
@@ -13,9 +13,9 @@ const HomePage = () => {
 
       <section className="text-center z-10 p-8 md:py-0">
         <div className="mb-8">
-          <img
-            src="profile.png"
-            alt="Profile"
+          <LazyImage
+            src="/images/profile.webp"
+            alt=""
             className="w-32 h-32 object-cover rounded-full mx-auto mb-6 border-4 border-purple-500 shadow-xl"
           />
         </div>

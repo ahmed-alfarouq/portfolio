@@ -1,6 +1,7 @@
 import { Code, MapPin, Calendar } from "lucide-react";
 
 import { experiences } from "@/constants";
+import LazyImage from "@/components/LazyImage";
 
 const About = () => {
   return (
@@ -48,8 +49,8 @@ const About = () => {
                 meaningful projects.
               </p>
             </div>
-            <img
-              src="me.png"
+            <LazyImage
+              src="/images/me.webp"
               alt=""
               className="rounded-2xl w-4/10 object-cover shadow-2xl hidden lg:block"
             />
@@ -73,8 +74,8 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <img
-              src="me.png"
+            <LazyImage
+              src="/images/me.webp"
               alt=""
               className="rounded-2xl sm:w-1/2 object-cover shadow-2xl lg:hidden"
             />
@@ -102,7 +103,7 @@ const About = () => {
                   {exp.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm"
+                      className="tag"
                     >
                       {tech}
                     </span>

@@ -1,11 +1,12 @@
 import { Link } from "react-router";
 import { navItems } from "../constants";
+import LazyImage from "@/components/LazyImage";
 
 const Sidebar = () => {
   return (
     <nav className="sm:fixed left-0 top-0 sm:h-full sm:w-20 bg-black/90 backdrop-blur-lg border-r border-gray-800 z-50 flex flex-col items-center sm:py-8">
       <div className="my-2 sm:my-8 w-10 h-10">
-        <img src="logo.png" alt="" className="w-full rounded-lg" />
+        <LazyImage src="/images/logo.webp" alt="" className="w-full rounded-lg" />
       </div>
 
       <ul className="flex sm:flex-col flex-wrap justify-center gap-6 my-4 sm:my-0">
