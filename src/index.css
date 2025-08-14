@@ -18,7 +18,7 @@
   }
 
   .cta-btn {
-    @apply min-w-60 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-full font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg flex justify-center items-center gap-2 cursor-pointer;
+    @apply min-w-60 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-4 rounded-full font-semibold transform hover:scale-105 transition-all duration-300 shadow-lg flex justify-center items-center gap-2 cursor-pointer disabled:opacity-45;
   }
 
   .cta-btn-outline {
@@ -46,7 +46,7 @@
   }
 
   .input {
-    @apply w-full bg-gray-800/50 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors;
+    @apply w-full bg-gray-800/50 border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 transition-colors disabled:opacity-50;
   }
 
   .required-indicator {

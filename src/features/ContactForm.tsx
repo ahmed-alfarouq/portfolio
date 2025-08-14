@@ -10,6 +10,13 @@ import { contactSchema, type ContactSchema } from "@/schemas";
 import { Send } from "lucide-react";
 import sendMail from "@/services/sendMail";
 
+const defaultValues = {
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+};
+
 const ContactForm = () => {
   const [isPending, startTransition] = useTransition();
   const [errorMessage, setErrorMessage] = useState("");
@@ -17,16 +24,12 @@ const ContactForm = () => {
 
   const {
     control,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm<ContactSchema>({
     resolver: yupResolver(contactSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    },
+    defaultValues,
     mode: "onChange",
   });
 
@@ -41,6 +44,7 @@ const ContactForm = () => {
           return;
         }
         setSuccessMessage(result.message);
+        reset(defaultValues);
       } catch (error) {
         setErrorMessage((error as Error).message);
       }
