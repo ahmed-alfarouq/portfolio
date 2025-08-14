@@ -103,7 +103,7 @@ const About = () => {
                   {exp.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="bg-gray-700 text-gray-300 px-3 py-1 rounded-full text-sm"
+                      className="tag"
                     >
                       {tech}
                     </span>
