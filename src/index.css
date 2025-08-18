@@ -25,6 +25,10 @@
     @apply min-w-60 border border-gray-200 hover:border-white text-gray-200 hover:text-white px-8 py-4 rounded-full font-semibold transform hover:scale-105 transition-all duration-300 flex justify-center items-center gap-2 cursor-pointer;
   }
 
+  .icon-link {
+    @apply text-gray-300 transform hover:scale-110 transition-all duration-300;
+  }
+
   .card {
     @apply bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 hover:border-purple-400/50 transition-all duration-300;
   }
