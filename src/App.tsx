@@ -12,11 +12,6 @@ const App = () => {
   return (
     <BrowserRouter>
       <Sidebar />
-      {/**
-       ** Animation Concept
-       * Animtion when page gets loaded
-       * Animation before navigating
-       */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
