@@ -60,11 +60,11 @@ const FeaturedProjectCard = ({
           </div>
         )}
 
-        <div className="flex gap-3">
+        <div className="flex flex-wrap gap-3">
           <a
             href={liveUrl}
             target="_blank"
-            className="cta-btn min-w-32 px-4 py-2"
+            className="cta-btn min-w-32 px-4 py-2 rounded-lg"
           >
             <ExternalLink className="w-4 h-4" />
             Live Demo
@@ -73,7 +73,7 @@ const FeaturedProjectCard = ({
             <a
               href={githubUrl}
               target="_blank"
-              className="cta-btn-outline min-w-32 px-4 py-2"
+              className="cta-btn-outline min-w-32 px-4 py-2 rounded-lg"
             >
               <Github className="w-4 h-4" />
               Code

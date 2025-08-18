@@ -28,7 +28,7 @@ const HomePage = () => {
         </h1>
 
         <article
-          className="text-2xl text-gray-300 mb-8 font-light"
+          className="text-2xl text-gray-200 mb-8 font-light"
           aria-label="Roles: Frontend Developer, React Specialist, UI/UX Enthusiast"
         >
           <span className="inline-block animate-[bounce_1s_ease-in-out_infinite]">
@@ -44,7 +44,7 @@ const HomePage = () => {
           </span>
         </article>
 
-        <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed">
+        <p className="text-lg text-gray-200 max-w-2xl mx-auto mb-8 leading-relaxed">
           A front-end developer who crafts fast, accessible, and intuitive
           digital experiences. With a focus on React and responsive design, I
           build maintainable code that scales—while keeping users at the heart
@@ -73,7 +73,7 @@ const HomePage = () => {
             href="https://github.com/ahmed-alfarouq"
             target="_blank"
             aria-label="My Github"
-            className="text-gray-400 hover:text-black/70 transform hover:scale-110 transition-all duration-300"
+            className="text-gray-300 hover:text-black/70 transform hover:scale-110 transition-all duration-300"
           >
             <Github className="w-8 h-8" aria-hidden="true" />
           </a>
@@ -81,14 +81,14 @@ const HomePage = () => {
             href="https://www.linkedin.com/in/ahmed-alfarouq"
             target="_blank"
             aria-label="My Linkedin"
-            className="text-gray-400 hover:text-blue-400 transform hover:scale-110 transition-all duration-300"
+            className="text-gray-300 hover:text-blue-400 transform hover:scale-110 transition-all duration-300"
           >
             <Linkedin className="w-8 h-8" aria-hidden="true" />
           </a>
           <a
             href="mailto:ahmed.omar.alfarouq@gmail.com"
             aria-label="Email me"
-            className="text-gray-400 hover:text-green-400 transform hover:scale-110 transition-all duration-300"
+            className="text-gray-300 hover:text-green-400 transform hover:scale-110 transition-all duration-300"
           >
             <Mail className="w-8 h-8" aria-hidden="true" />
           </a>
