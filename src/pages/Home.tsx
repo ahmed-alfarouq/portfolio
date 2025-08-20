@@ -2,12 +2,14 @@ import { useRef } from "react";
 import { Link } from "react-router";
 
 import gsap from "gsap";
-import { SplitText } from "gsap/all";
+import { ScrollTrigger, SplitText } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 
 import LazyImage from "@/components/LazyImage";
 
 import { Mail, Github, Linkedin, Download, ChevronRight } from "lucide-react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const HomePage = () => {
   const homeRef = useRef(null);
@@ -22,38 +24,27 @@ const HomePage = () => {
 
       const titleSplit = new SplitText(".title", { type: "chars" });
       const paraSplit = new SplitText(".para", { type: "lines" });
+      gsap.set(".cta", { scale: 0, opacity: 0 });
 
       tl.fromTo(
         ".avatar",
-        { y: "-200%", x: "-150%" },
-        { y: "0%", ease: "bounce.out" }
+        { yPercent: -200, xPercent: -150 },
+        { yPercent: 0, ease: "bounce.out" }
       );
 
       tl.to(".avatar", {
-        x: "150%",
+        xPercent: 150,
         rotate: 360,
         ease: "power1.in",
         duration: 0.5,
       });
 
       tl.to(".avatar", {
-        x: 0,
-        rotation: 0,
+        xPercent: 0,
+        rotate: 0,
         scale: 1.2,
-        duration: 0.3,
+        duration: 0.2,
       });
-
-      tl.from(
-        titleSplit.chars,
-        {
-          yPercent: 100,
-          rotation: 15,
-          duration: 0.5,
-          ease: "back.out",
-          stagger: 0.04,
-        },
-        "-=0.5"
-      );
 
       if (isMobile) {
         tl.fromTo(
@@ -77,6 +68,85 @@ const HomePage = () => {
             },
           }
         );
+      }
+
+      tl.from(
+        titleSplit.chars,
+        {
+          yPercent: isMobile ? 200 : 100,
+          rotation: 15,
+          duration: 0.5,
+          ease: "back.out",
+          stagger: 0.04,
+        },
+        "-=0.5"
+      );
+
+      tl.from(
+        paraSplit.lines,
+        {
+          yPercent: 20,
+          opacity: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          stagger: 0.08,
+        },
+        "-=0.8"
+      );
+
+      if (isMobile) {
+        tl.call(
+          () => {
+            gsap.delayedCall(0.2, () => {
+              gsap.to(".cta", {
+                scale: 1,
+                opacity: 1,
+                ease: "back.out",
+                duration: 0.4,
+                stagger: 0.25,
+                scrollTrigger: {
+                  trigger: ".cta",
+                  start: "top 85%",
+                  toggleActions: "play pause resume reverse",
+                  fastScrollEnd: true,
+                  preventOverlaps: true,
+                },
+              });
+            });
+          },
+          undefined,
+          "+=0.1"
+        );
+        tl.call(
+          () => {
+            gsap.delayedCall(0.2, () => {
+              gsap.fromTo(
+                ".icon-link",
+                {
+                  yPercent: 140,
+                  opacity: 0,
+                },
+                {
+                  yPercent: 0,
+                  opacity: 1,
+                  duration: 0.6,
+                  ease: "back.out",
+                  stagger: 0.05,
+                  scrollTrigger: {
+                    trigger: ".cta",
+                    start: "top 67%",
+                    toggleActions: "play pause resume reverse",
+                    fastScrollEnd: true,
+                    preventOverlaps: true,
+                    markers: true,
+                  },
+                }
+              );
+            });
+          },
+          undefined,
+          "+=0.1"
+        );
       } else {
         tl.fromTo(
           ".role",
@@ -86,7 +156,7 @@ const HomePage = () => {
             opacity: 1,
             scale: 1,
             duration: 0.4,
-            ease: "back.out(1.2)",
+            ease: "back.out",
             stagger: 0.1,
           }
         );
@@ -98,64 +168,54 @@ const HomePage = () => {
             scale: 1,
             opacity: 1,
             duration: 0.3,
-            ease: "back.out(2)",
+            ease: "back.out",
             stagger: 0.1,
           },
           "-=0.3"
         );
+
+        tl.to(
+          ".cta",
+          {
+            scale: 1,
+            ease: "power1.inOut",
+            duration: 0.1,
+            stagger: 0.1,
+          },
+          "-=0.4"
+        );
+
+        tl.fromTo(
+          ".icon-link",
+          { yPercent: 100 },
+          { yPercent: 0, opacity: 1, stagger: 0.05 },
+          "-=0.4"
+        );
       }
 
-      tl.from(
-        paraSplit.lines,
-        {
-          yPercent: 20,
-          opacity: 0,
-          duration: 0.8,
-          ease: "power2.out",
-          stagger: 0.08,
-        },
-        "-=0.3"
-      );
+      if (!isMobile) {
+        const ctaButtons = document.querySelectorAll(".cta");
+        ctaButtons.forEach((btn) => {
+          btn.addEventListener("mouseenter", () => {
+            gsap.to(btn, { scale: 1.05, duration: 0.1 });
+          });
 
-      tl.to(
-        ".cta",
-        {
-          scaleX: 1,
-          ease: "power1.inOut",
-          duration: 0.1,
-          stagger: 0.1,
-        },
-        "-=0.4"
-      );
-
-      tl.fromTo(
-        ".icon-link",
-        { yPercent: 100 },
-        { yPercent: 0, opacity: 1, stagger: 0.05 },
-        "-=0.4"
-      );
-
-      const ctaButtons = document.querySelectorAll(".cta");
-      ctaButtons.forEach((btn) => {
-        btn.addEventListener("mouseenter", () => {
-          gsap.to(btn, { scale: 1.05, duration: 0.1 });
+          btn.addEventListener("mouseleave", () => {
+            gsap.to(btn, { scale: 1, duration: 0.1 });
+          });
         });
 
-        btn.addEventListener("mouseleave", () => {
-          gsap.to(btn, { scale: 1, duration: 0.1 });
-        });
-      });
+        const iconLinks = document.querySelectorAll(".icon-link");
+        iconLinks.forEach((link) => {
+          link.addEventListener("mouseenter", () => {
+            gsap.to(link, { scale: 1.05, duration: 0.1, ease: "power1.inOut" });
+          });
 
-      const iconLinks = document.querySelectorAll(".icon-link");
-      iconLinks.forEach((link) => {
-        link.addEventListener("mouseenter", () => {
-          gsap.to(link, { scale: 1.05, duration: 0.1, ease: "power1.inOut" });
+          link.addEventListener("mouseleave", () => {
+            gsap.to(link, { scale: 1, duration: 0.1, ease: "power1.inOut" });
+          });
         });
-
-        link.addEventListener("mouseleave", () => {
-          gsap.to(link, { scale: 1, duration: 0.1, ease: "power1.inOut" });
-        });
-      });
+      }
 
       return () => {
         timelineRef.current?.kill();
@@ -199,12 +259,13 @@ const HomePage = () => {
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-400/20 to-pink-400/20 opacity-0 hover:opacity-100 transition-opacity duration-300 scale-110 animate-pulse -z-10"></div>
         </div>
 
-        <h1 className="title text-4xl sm:text-5xl md:text-6xl font-bold leading-relaxed text-white mb-6 overflow-hidden">
+        <h1 className="title text-4xl sm:text-5xl md:text-6xl font-bold xs:leading-relaxed text-white mb-6 overflow-hidden">
           Ahmed{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
             Al-Farouq
           </span>
         </h1>
+
         <article
           className="hidden sm:block text-xl sm:text-2xl text-gray-200 mb-8 font-light overflow-hidden"
           aria-label="Roles: Frontend Developer, React Specialist, UI/UX Enthusiast"
@@ -223,13 +284,13 @@ const HomePage = () => {
           and am always sharpening my skills to create better products.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Link to="/projects" className="cta scale-0 cta-btn">
+          <Link to="/projects" className="cta cta-btn">
             View My Work
             <ChevronRight className="w-5 h-5" aria-hidden="true" />
           </Link>
 
           <a
-            className="cta scale-0 cta-btn-outline"
+            className="cta cta-btn-outline"
             href="resume.pdf"
             download="Ahmed-Alfarouq.pdf"
           >

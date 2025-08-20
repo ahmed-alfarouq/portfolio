@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+  --breakpoint-xs: 300px;
+}
+
 @layer components {
   #root {
     @apply md:min-h-screen flex flex-col md:flex-row overflow-x-hidden;

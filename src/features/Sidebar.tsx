@@ -119,7 +119,7 @@ const Sidebar = () => {
         <LazyImage
           src="/images/logo.webp"
           alt="Website Logo"
-          className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl object-cover transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-purple-500/30"
+          className="w-11 h-11 hidden sm:block sm:w-12 sm:h-12 rounded-xl object-cover transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-purple-500/30"
         />
         <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-400/20 to-pink-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 scale-110 blur-sm -z-10"></div>
       </div>
