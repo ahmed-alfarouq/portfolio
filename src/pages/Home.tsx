@@ -258,7 +258,7 @@ const HomePage = () => {
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-400/20 to-pink-400/20 opacity-0 hover:opacity-100 transition-opacity duration-300 scale-110 animate-pulse -z-10"></div>
         </div>
 
-        <h1 className="title text-4xl sm:text-5xl md:text-6xl font-bold xs:leading-relaxed text-white mb-6 overflow-hidden">
+        <h1 className="title text-4xl sm:text-5xl md:text-6xl font-bold leading-tight xs:leading-relaxed text-white mb-6 overflow-hidden">
           Ahmed{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
             Al-Farouq
