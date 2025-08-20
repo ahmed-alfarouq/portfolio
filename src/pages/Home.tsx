@@ -138,7 +138,6 @@ const HomePage = () => {
                     toggleActions: "play pause resume reverse",
                     fastScrollEnd: true,
                     preventOverlaps: true,
-                    markers: true,
                   },
                 }
               );
