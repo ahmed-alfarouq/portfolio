@@ -24,7 +24,6 @@ const HomePage = () => {
 
       const titleSplit = new SplitText(".title", { type: "chars" });
       const paraSplit = new SplitText(".para", { type: "lines" });
-      gsap.set(".cta", { scale: 0, opacity: 0 });
 
       tl.fromTo(
         ".avatar",
@@ -177,6 +176,7 @@ const HomePage = () => {
           ".cta",
           {
             scale: 1,
+            opacity: 1,
             ease: "power1.inOut",
             duration: 0.1,
             stagger: 0.1,
@@ -283,13 +283,13 @@ const HomePage = () => {
           and am always sharpening my skills to create better products.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Link to="/projects" className="cta cta-btn">
+          <Link to="/projects" className="cta scale-0 opacity-0 cta-btn">
             View My Work
             <ChevronRight className="w-5 h-5" aria-hidden="true" />
           </Link>
 
           <a
-            className="cta cta-btn-outline"
+            className="cta scale-0 opacity-0 cta-btn-outline"
             href="resume.pdf"
             download="Ahmed-Alfarouq.pdf"
           >
