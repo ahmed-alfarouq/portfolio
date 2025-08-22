@@ -248,7 +248,7 @@ const HomePage = () => {
 
         <h1 className="title text-4xl sm:text-5xl md:text-6xl font-bold leading-tight xs:leading-relaxed text-white mb-6 overflow-hidden">
           Ahmed{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+          <span className="text-white">
             Al-Farouq
           </span>
         </h1>
