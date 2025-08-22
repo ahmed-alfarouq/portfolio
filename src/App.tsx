@@ -7,11 +7,13 @@ import Projects from "@/pages/Projects";
 import Contact from "@/pages/Contact";
 
 import Sidebar from "@features/Sidebar";
+import ScrollToTop from "@components/ScrollToTop";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Sidebar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
