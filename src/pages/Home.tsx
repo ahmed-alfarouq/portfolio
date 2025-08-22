@@ -96,54 +96,42 @@ const HomePage = () => {
       if (isMobile) {
         tl.call(
           () => {
-            gsap.delayedCall(0.2, () => {
-              gsap.to(".cta", {
-                scale: 1,
-                opacity: 1,
-                ease: "back.out",
-                duration: 0.4,
-                stagger: 0.25,
-                scrollTrigger: {
-                  trigger: ".cta",
-                  start: "top 85%",
-                  toggleActions: "play pause resume reverse",
-                  fastScrollEnd: true,
-                  preventOverlaps: true,
-                },
-              });
+            gsap.to(".cta", {
+              scale: 1,
+              opacity: 1,
+              ease: "back.out",
+              duration: 0.4,
+              stagger: 0.25,
+              scrollTrigger: {
+                trigger: ".cta",
+                start: "top 85%",
+                toggleActions: "play pause resume reverse",
+                fastScrollEnd: true,
+                preventOverlaps: true,
+              },
             });
           },
           undefined,
-          "+=0.1"
+          "-=0.2"
         );
         tl.call(
           () => {
-            gsap.delayedCall(0.2, () => {
-              gsap.fromTo(
-                ".icon-link",
-                {
-                  yPercent: 140,
-                  opacity: 0,
-                },
-                {
-                  yPercent: 0,
-                  opacity: 1,
-                  duration: 0.6,
-                  ease: "back.out",
-                  stagger: 0.05,
-                  scrollTrigger: {
-                    trigger: ".cta",
-                    start: "top 67%",
-                    toggleActions: "play pause resume reverse",
-                    fastScrollEnd: true,
-                    preventOverlaps: true,
-                  },
-                }
-              );
+            gsap.to(".icon-link", {
+              yPercent: 0,
+              duration: 0.4,
+              ease: "back.out",
+              stagger: 0.05,
+              scrollTrigger: {
+                trigger: ".cta",
+                start: "top 67%",
+                toggleActions: "play pause resume reverse",
+                fastScrollEnd: true,
+                preventOverlaps: true,
+              },
             });
           },
           undefined,
-          "+=0.1"
+          "+=0.2"
         );
       } else {
         tl.fromTo(
@@ -156,7 +144,8 @@ const HomePage = () => {
             duration: 0.4,
             ease: "back.out",
             stagger: 0.1,
-          }
+          },
+          "-=1.1"
         );
 
         tl.fromTo(
@@ -169,7 +158,7 @@ const HomePage = () => {
             ease: "back.out",
             stagger: 0.1,
           },
-          "-=0.3"
+          "-=0.9"
         );
 
         tl.to(
@@ -184,10 +173,9 @@ const HomePage = () => {
           "-=0.4"
         );
 
-        tl.fromTo(
+        tl.to(
           ".icon-link",
-          { yPercent: 100 },
-          { yPercent: 0, opacity: 1, stagger: 0.05 },
+          { yPercent: 0, stagger: 0.05 },
           "-=0.4"
         );
       }
@@ -302,7 +290,7 @@ const HomePage = () => {
             href="https://github.com/ahmed-alfarouq"
             target="_blank"
             aria-label="My Github"
-            className="icon-link opacity-0 hover:text-black/70"
+            className="icon-link translate-y-[130%] hover:text-black/70"
           >
             <Github className="w-8 h-8" aria-hidden="true" />
           </a>
@@ -310,14 +298,14 @@ const HomePage = () => {
             href="https://www.linkedin.com/in/ahmed-alfarouq"
             target="_blank"
             aria-label="My Linkedin"
-            className="icon-link opacity-0 hover:text-blue-400"
+            className="icon-link translate-y-[130%] hover:text-blue-400"
           >
             <Linkedin className="w-8 h-8" aria-hidden="true" />
           </a>
           <a
             href="mailto:ahmed.omar.alfarouq@gmail.com"
             aria-label="Email me"
-            className="icon-link opacity-0 hover:text-green-400"
+            className="icon-link translate-y-[183%] hover:text-green-400"
           >
             <Mail className="w-8 h-8" aria-hidden="true" />
           </a>
