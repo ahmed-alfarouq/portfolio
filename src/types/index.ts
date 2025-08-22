@@ -40,6 +40,7 @@ export interface LazyImageProps {
   placeholderImg?: string;
   src: string;
   alt: string;
+  id?: string;
   className?: string;
 }
 
@@ -48,6 +49,7 @@ export interface SkillsCategoryProps {
   icon: LucideIcon;
   category: string;
   skills: Skill[];
+  className?: string;
 }
 
 export interface SkillCardProps {
@@ -64,6 +66,7 @@ export interface ExpertiseCardProps {
     color: string;
     bgColor: string;
   };
+  className?: string;
 }
 
 export interface TechnicalCardProps {
@@ -74,6 +77,7 @@ export interface TechnicalCardProps {
   };
   title: string;
   description: string;
+  className?: string;
 }
 
 export interface ProjectCardProps {
@@ -83,6 +87,7 @@ export interface ProjectCardProps {
   stats: { stars: number; forks: number; views: number };
   liveUrl: string;
   githubUrl?: string;
+  className?: string;
 }
 
 export interface FeaturedProjectCardProps extends ProjectCardProps {

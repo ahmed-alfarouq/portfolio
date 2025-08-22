@@ -1,7 +1,13 @@
 import type { LazyImageProps } from "@/types";
 import { useEffect, useRef, useState } from "react";
 
-const LazyImage = ({ placeholderImg, src, alt, className }: LazyImageProps) => {
+const LazyImage = ({
+  placeholderImg,
+  id,
+  src,
+  alt,
+  className,
+}: LazyImageProps) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [shouldLoad, setShouldLoad] = useState(false);
@@ -31,7 +37,7 @@ const LazyImage = ({ placeholderImg, src, alt, className }: LazyImageProps) => {
   }, []);
 
   return (
-    <div className={`${className} overflow-hidden relative`}>
+    <div className={`${className} overflow-hidden relative`} id={id}>
       {(isLoading || hasError) && placeholderImg && (
         <img
           src={placeholderImg}

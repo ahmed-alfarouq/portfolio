@@ -11,9 +11,12 @@ const FeaturedProjectCard = ({
   stats,
   liveUrl,
   githubUrl,
+  className,
 }: FeaturedProjectCardProps) => {
   return (
-    <section className="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20 hover:border-purple-400/50 transition-all duration-300 group">
+    <section
+      className={`bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20 hover:border-purple-400/50 transition-all duration-300 group ${className}`}
+    >
       <figure className="relative overflow-hidden">
         <LazyImage
           placeholderImg="/images/default-placeholder.jpg"

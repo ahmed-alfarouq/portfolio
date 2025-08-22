@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+@theme {
+  --breakpoint-xs: 300px;
+}
+
+@layer utilities {
+  .bg-clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+  }
+}
+
 @layer components {
   #root {
     @apply md:min-h-screen flex flex-col md:flex-row overflow-x-hidden;
@@ -10,7 +23,7 @@
   }
 
   .page-container {
-    @apply min-h-dvh sm:pl-[70px] w-full flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden;
+    @apply min-h-dvh sm:pl-[70px] pb-20 sm:pb-0 w-full flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden;
   }
 
   .page-title {
@@ -23,6 +36,10 @@
 
   .cta-btn-outline {
     @apply min-w-60 border border-gray-200 hover:border-white text-gray-200 hover:text-white px-8 py-4 rounded-full font-semibold transform hover:scale-105 transition-all duration-300 flex justify-center items-center gap-2 cursor-pointer;
+  }
+
+  .icon-link {
+    @apply text-gray-300 transform hover:scale-110 transition-all duration-300;
   }
 
   .card {

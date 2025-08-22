@@ -8,9 +8,10 @@ const ProjectCard = ({
   stats,
   githubUrl,
   liveUrl,
+  className,
 }: ProjectCardProps) => {
   return (
-    <section className="card">
+    <section className={`card ${className}`}>
       <div className="flex items-start justify-between mb-3">
         <h4 className="text-lg font-semibold text-white">{title}</h4>
         <div className="flex gap-2">
