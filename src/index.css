@@ -4,6 +4,15 @@
   --breakpoint-xs: 300px;
 }
 
+@layer utilities {
+  .bg-clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+  }
+}
+
 @layer components {
   #root {
     @apply md:min-h-screen flex flex-col md:flex-row overflow-x-hidden;
