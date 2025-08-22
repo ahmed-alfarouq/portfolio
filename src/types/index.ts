@@ -87,6 +87,7 @@ export interface ProjectCardProps {
   stats: { stars: number; forks: number; views: number };
   liveUrl: string;
   githubUrl?: string;
+  className?: string;
 }
 
 export interface FeaturedProjectCardProps extends ProjectCardProps {
