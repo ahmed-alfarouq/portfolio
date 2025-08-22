@@ -40,6 +40,7 @@ export interface LazyImageProps {
   placeholderImg?: string;
   src: string;
   alt: string;
+  id?: string;
   className?: string;
 }
 
