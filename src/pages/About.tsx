@@ -177,20 +177,9 @@ const About = () => {
     }
 
     tl.call(() => {
-      const experienceTl = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".experience-card",
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
-      });
-
       gsap.fromTo(
         "#experience-title",
-        {
-          y: 50,
-          scale: 0.9,
-        },
+        { y: 50, scale: 0.9 },
         {
           y: 0,
           opacity: 1,
@@ -204,40 +193,48 @@ const About = () => {
         }
       );
 
-      experienceTl.fromTo(
-        ".experience-card",
-        {
-          y: 80,
-          rotationX: 15,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          rotationX: 0,
-          ease: "power1.out",
-          stagger: 0.02,
-        }
-      );
+      gsap.utils.toArray(".experience-card").forEach((card) => {
+        const target = card as HTMLElement;
+        gsap.fromTo(
+          target,
+          { y: 80, rotationX: 15 },
+          {
+            y: 0,
+            opacity: 1,
+            rotationX: 0,
+            ease: "power1.out",
+            scrollTrigger: {
+              trigger: target,
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+        const tags = target.querySelectorAll(".tech-tag");
 
-      experienceTl.fromTo(
-        ".tech-tag",
-        {
-          scale: 0,
-          rotation: 180,
-        },
-        {
-          scale: 1,
-          opacity: 1,
-          rotation: 0,
-          stagger: 0.05,
-          ease: "back.out",
-        }
-      );
+        gsap.fromTo(
+          tags,
+          { scale: 0, rotation: 180 },
+          {
+            scale: 1,
+            opacity: 1,
+            rotation: 0,
+            delay: 0.6,
+            stagger: 0.05,
+            ease: "back.out",
+            scrollTrigger: {
+              trigger: target,
+              start: "top 80%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      });
     });
 
     gsap.to("#profile-image, .profile-image-mobile", {
       y: -10,
-      duration: 3,
+      duration: 1,
       ease: "power1.inOut",
       yoyo: true,
       repeat: -1,
