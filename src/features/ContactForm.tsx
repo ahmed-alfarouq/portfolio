@@ -104,7 +104,7 @@ const ContactForm = () => {
       )}
       <button
         type="submit"
-        className="cta-btn w-full rounded-lg"
+        className="submit-button cta-btn w-full rounded-lg"
         disabled={isPending}
       >
         <Send className="w-5 h-5" aria-hidden="true" />
