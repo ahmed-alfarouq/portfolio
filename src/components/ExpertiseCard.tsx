@@ -6,10 +6,11 @@ const ExpertiseCard = ({
   description,
   skills,
   skillsStyle,
+  className,
 }: ExpertiseCardProps) => {
   const IconComponent = icon;
   return (
-    <div className="card group text-center">
+    <div className={`card group text-center ${className}`}>
       <IconComponent
         className={`w-16 h-16 ${skillsStyle.color} mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
       />

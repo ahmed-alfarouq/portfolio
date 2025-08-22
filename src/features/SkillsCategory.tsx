@@ -5,10 +5,11 @@ const SkillsCategory = ({
   icon,
   category,
   skills,
+  className,
 }: SkillsCategoryProps) => {
   const IconComponent = icon;
   return (
-    <section key={category} className="space-y-6">
+    <section className={`space-y-6 ${className}`}>
       <div className="flex items-center gap-3">
         <div
           className={`p-2 rounded-lg ${config.bgColor} ${config.borderColor} border`}

@@ -49,6 +49,7 @@ export interface SkillsCategoryProps {
   icon: LucideIcon;
   category: string;
   skills: Skill[];
+  className?: string;
 }
 
 export interface SkillCardProps {
@@ -65,6 +66,7 @@ export interface ExpertiseCardProps {
     color: string;
     bgColor: string;
   };
+  className?: string;
 }
 
 export interface TechnicalCardProps {
@@ -75,6 +77,7 @@ export interface TechnicalCardProps {
   };
   title: string;
   description: string;
+  className?: string;
 }
 
 export interface ProjectCardProps {
