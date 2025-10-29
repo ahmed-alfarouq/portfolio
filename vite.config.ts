@@ -13,5 +13,12 @@ export default defineConfig({
       "@components": resolve(__dirname, "./src/components"),
     },
   },
-  plugins: [react(), tailwindcss()],
+  plugins: [
+    react({
+      babel: {
+        plugins: ["babel-plugin-react-compiler"],
+      },
+    }),
+    tailwindcss(),
+  ],
 });
