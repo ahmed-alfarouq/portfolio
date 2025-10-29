@@ -173,11 +173,7 @@ const HomePage = () => {
           "-=0.4"
         );
 
-        tl.to(
-          ".icon-link",
-          { yPercent: 0, stagger: 0.05 },
-          "-=0.4"
-        );
+        tl.to(".icon-link", { yPercent: 0, stagger: 0.05 }, "-=0.4");
       }
 
       if (!isMobile) {
@@ -278,8 +274,8 @@ const HomePage = () => {
 
           <a
             className="cta scale-0 opacity-0 cta-btn-outline"
-            href="resume.pdf"
-            download="Ahmed-Alfarouq.pdf"
+            href="ahmed-alfarouq.pdf"
+            download="Ahmed Alfarouq.pdf"
           >
             <Download className="w-5 h-5" aria-hidden="true" />
             Download Resume
